@@ -27,16 +27,16 @@ const Header = () => {
         
         {/* Navigation Links */}
         <nav className="hidden md:flex space-x-8">
-          {['Services', 'About', 'Contact', 'Team'].map((item) => (
+          {['Services', 'About', 'Contact', 'Team', 'Portfolio'].map((item) => (
             <motion.div
               key={item}
               whileHover={{ scale: 1.1 }}
               whileTap={{ scale: 0.9 }}
             >
-              {item === 'Team' ? (
-                // Use Link for Team navigation to /team route
+              {item === 'Team' || item === 'Portfolio' ? (
+                // Use Link for Team and Portfolio navigation to respective routes
                 <Link
-                  to="/team"
+                  to={`/${item.toLowerCase()}`}
                   className="text-gray-300 hover:text-red-600 transition-colors"
                 >
                   {item}
