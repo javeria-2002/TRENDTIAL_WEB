@@ -1,0 +1,246 @@
+body {
+    margin: 0;
+    font-family: Arial, sans-serif;
+    background: linear-gradient(180deg, #5d1b29, #32152c);
+    color: white;
+    overflow: hidden;
+    position: relative;
+}
+
+h1 {
+    font-size: 3rem;
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    margin-bottom: 40px;
+    text-align: center;
+    color: rgb(255, 255, 255);
+    z-index: 1;
+    position: relative;
+}
+
+/* Background Animation */
+.bubble-background {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    overflow: hidden;
+    z-index: -1;
+}
+
+.bubble {
+    position: absolute;
+    bottom: -100px;
+    border-radius: 50%;
+    background: rgba(255, 255, 255, 0.3);
+    animation: rise 5s linear infinite;
+    /* Bubbles rise continuously */
+    opacity: 0.6;
+    /* Slight transparency */
+}
+
+@keyframes rise {
+    0% {
+        transform: translateY(0);
+    }
+
+    100% {
+        transform: translateY(-120vh);
+    }
+}
+
+.bubble:nth-child(1) {
+    left: 10%;
+    width: 20px;
+    height: 20px;
+    animation-duration: 8s;
+    animation-delay: 0s;
+}
+
+.bubble:nth-child(2) {
+    left: 30%;
+    width: 25px;
+    height: 25px;
+    animation-duration: 7s;
+    animation-delay: 1s;
+}
+
+.bubble:nth-child(3) {
+    left: 30%;
+    width: 30px;
+    height: 30px;
+    animation-duration: 6s;
+    animation-delay: 2s;
+}
+
+.bubble:nth-child(4) {
+    left: 20%;
+    width: 15px;
+    height: 15px;
+    animation-duration: 9s;
+    animation-delay: 3s;
+}
+
+.bubble:nth-child(5) {
+    left: 40%;
+    width: 40px;
+    height: 40px;
+    animation-duration: 5s;
+    animation-delay: 4s;
+}
+
+.bubble:nth-child(6) {
+    left: 80%;
+    width: 15px;
+    height: 15px;
+    animation-duration: 9s;
+    animation-delay: 3s; 
+}
+
+.bubble:nth-child(7) {
+    left: 50%;
+    width: 30px;
+    height: 30px;
+    animation-duration: 6s;
+    animation-delay: 2s;
+}
+
+.bubble:nth-child(8) {
+    right: 50%;
+    width: 30px;
+    height: 30px;
+    animation-duration: 6s;
+    animation-delay: 2s;
+}
+
+.bubble:nth-child(9) {
+    right: 30%;
+    width: 30px;
+    height: 30px;
+    animation-duration: 6s;
+    animation-delay: 2s;
+}
+
+.bubble:nth-child(10) {
+    right: 10%;
+    width: 30px;
+    height: 30px;
+    animation-duration: 6s;
+    animation-delay: 2s;
+}
+.team-section {
+    padding: 0px;
+    text-align: center;
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    /* Align content at the top */
+    align-items: center;
+    min-height: 80vh;
+    /* Ensure the section fills at least the full viewport */
+    z-index: 1;
+    /* Allow scrolling if content exceeds viewport */
+}
+
+.section-title {
+    font-size: 3rem;
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    margin-bottom: 10px;
+    text-align: center;
+    color: white;
+    /* Ensure text color is visible */
+    position: relative;
+    /* Make sure it stays in place */
+    z-index: 2;
+    /* Ensure it stays above background elements */
+}
+
+.team-grid {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 24px;
+    z-index: 1;
+    padding-bottom: 20px;
+    /* Add space below the last card */
+}
+
+.team-member {
+    perspective: 1000px;
+}
+
+.team-card {
+    width: 250px;
+    height: 280px;
+    position: relative;
+    cursor: pointer;
+    transition: transform 0.6s, box-shadow 0.3s;
+    /* Smooth transition */
+    transform-style: preserve-3d;
+    border-radius: 10px;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.2);
+}
+
+.team-card:hover {
+    transform: scale(1.1) rotateY(180deg);
+    /* Scale and rotate on hover */
+    box-shadow: 0 0 40px rgba(255, 0, 76, 0.7);
+    /* Neon glow effect */
+}
+
+.card-front,
+.card-back {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    backface-visibility: hidden;
+    border-radius: 10px;
+}
+
+.card-front {
+    background: rgba(255, 255, 255, 0.1);
+    /* Semi-transparent background */
+}
+
+.card-back {
+    background: #712132;
+    /* Darker background for back side */
+    color: white;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    transform: rotateY(180deg);
+    /* Flip the back */
+}
+
+.image-container {
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+    border-radius: 10px;
+    /* Rounded corners */
+}
+
+.team-img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    /* Maintain aspect ratio */
+}
+
+.member-name {
+    font-weight: bold;
+    margin: 10px 0 5px;
+}
+
+.member-role {
+    font-style: italic;
+    margin: 5px 0;
+}
+
+.member-bio {
+    font-size: 0.9rem;
+    text-align: center;
+}
